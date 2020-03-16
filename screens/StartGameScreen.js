@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import Card from '../components/Card';
 import Input from '../components/Input';
-import Number from '../components/Number';
+import React, { useState } from 'react';
 import Colors from '../constants/colors';
+import Number from '../components/Number';
 import { StyleSheet, View, Text, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
 
 const StartGameScreen = props => {
@@ -49,9 +49,9 @@ const StartGameScreen = props => {
       <Card style={styles.confirmedOutput}>
         <Text>You selected</Text>
         <Number>{selectedNumber}</Number>
-        <Button title="Start Game" color={Colors.primary}/>
+        <Button title="Start Game" color={Colors.primary} onPress={() => props.onStartGame(selectedNumber)}/>
       </Card>
-    );
+    )
   }
 
   return(
@@ -75,7 +75,7 @@ const StartGameScreen = props => {
         {confirmedOutput}
       </View>
     </TouchableWithoutFeedback>
-  );
+  )
 }
   
 const styles = StyleSheet.create({
